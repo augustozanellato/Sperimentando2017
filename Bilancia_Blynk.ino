@@ -334,8 +334,6 @@ void lcdUpdate(){
 }
 
 void i2cUpdate(){
-  //lcd.clear();
-  //lcd.print(nome);
   String spaces1 = "";
   for (int i = 0; i < (16 - ((String) "Massa:" + massa + " Kg").length()); i++){
     spaces1 += " ";
@@ -346,7 +344,6 @@ void i2cUpdate(){
     spaces2 += " ";
   }
   String line2 = nome + ":" + spaces2 + peso;
-  //lcd.print(peso);
   
   lcd.setCursor(0, 0);
   lcd.print(line1);
@@ -355,7 +352,6 @@ void i2cUpdate(){
 }
 
 void getForce(){
-  //massa = scale.get_units(3);
   massa = rilevaPeso();
   if (massa.toFloat() < 0) massa = (String) 0;
   peso = (float) massa.toFloat() / 9.80665 * g;
